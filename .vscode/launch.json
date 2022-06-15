@@ -5,6 +5,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "Launch MoonAndRotation",
+      "request": "launch",
+      "mainClass": "hackerearth.codemonk.monk_and_rotation.MoonAndRotation",
+      "projectName": "cpc_learning_f6541388"
+    },
+    {
       "type": "kotlin",
       "request": "launch",
       "name": "Kotlin Launch",
