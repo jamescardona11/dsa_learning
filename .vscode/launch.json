@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch MoonAndInversions",
+      "request": "launch",
+      "mainClass": "hackerearth.codemonk.monk_and_inversions.MoonAndInversions",
+      "projectName": "cpc_learning_f6541388"
+    },
+    {
+      "type": "java",
       "name": "Launch MoonAndRotation",
       "request": "launch",
       "mainClass": "hackerearth.codemonk.monk_and_rotation.MoonAndRotation",
