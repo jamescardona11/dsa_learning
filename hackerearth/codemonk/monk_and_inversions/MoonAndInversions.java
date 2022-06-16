@@ -27,7 +27,6 @@ public class MoonAndInversions {
     int t = Integer.parseInt(br.readLine());
 
     // ------------- start algorithm
-    StringBuilder sb = new StringBuilder();
     for (int i = 0; i < t; i++) {
       int m = Integer.parseInt(br.readLine());
       int[][] matrix = new int[m][m];
