@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Stack;
 
 
@@ -8,12 +10,19 @@ public class _Test {
 
 
       
-      // boolean isValid = solution.isValid("((");
-      // boolean isValid = solution.isValid("([}}])");
-      boolean isValid = solution.isValid("()[]{}");
+      
 
       System.out.println(isValid);
   }
 
   
+}
+
+
+class Solution {
+  public int majorityElement(int[] nums) {
+      Arrays.sort(nums);
+
+      return nums[nums.length/2];
+  }
 }
