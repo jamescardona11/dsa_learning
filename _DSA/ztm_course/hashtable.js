@@ -1,4 +1,4 @@
-class HashTable {
+class MyHashTable {
   constructor(size) {
     this.data = new Array(size);
   }
@@ -60,11 +60,12 @@ class HashTable {
   }
 }
 
-const myHashTable = new HashTable(50);
+const myHashTable = new MyHashTable(10);
+myHashTable.set('cherry', 900);
 myHashTable.set('grapes', 10000);
 myHashTable.set('grapes', 10000);
-myHashTable.get('grapes');
 myHashTable.set('apples', 9);
-myHashTable.get('apples');
 
-console.log(myHashTable);
+for (let i = 0; i < myHashTable.data.length; i++) {
+  console.log(myHashTable.data[i]);
+}

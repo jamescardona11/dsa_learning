@@ -25,12 +25,12 @@ class MyArray {
 
   delete(index) {
     const item = this.data[index];
-    this.shiftItems(index);
+    this._shiftItems(index);
     return item;
   }
 
-  shiftItems(index) {
-    for (const i = index; i < this.length - 1; i++) {
+  _shiftItems(index) {
+    for (let i = index; i < this.length - 1; i++) {
       this.data[i] = this.data[i + 1];
     }
 
@@ -39,10 +39,13 @@ class MyArray {
   }
 }
 
-const newArray = new MyArray();
+const arr = new MyArray();
+arr.push('hello');
+arr.push('hi');
+arr.push('there');
+arr.push('!');
 
-newArray.push('hi');
-newArray.push('you');
-newArray.delete(1);
+arr.delete(1);
+arr.pop();
 
-console.log(newArray);
+console.log(arr);
