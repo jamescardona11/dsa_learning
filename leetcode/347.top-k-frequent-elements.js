@@ -11,24 +11,37 @@
  * @return {number[]}
  */
 var topKFrequent = function (nums, k) {
-  if (nums.length === k) return nums;
+  if (nums.length <= 1) return nums;
 
-  let map = new Map();
-  let result = [];
+  const buckets = Array.from({ length: nums.length + 1 }, () => []);
+  const map = new Map();
 
   for (let i = 0; i < nums.length; i++) {
-    if (map.get(nums[i]) == -1) continue;
-    if (map.get(nums[i]) + 1 >= k) {
-      result.push(nums[i]);
-      map.set(nums[i], -1);
-    } else {
-      map.set(nums[i], (map.get(nums[i]) || 0) + 1);
-    }
+    map.set(nums[i], (map.get(nums[i]) || 0) + 1);
   }
 
-  // console.log(map);
+  for (let entry of map) {
+    buckets[entry[1]].push(entry[0]);
+  }
+
+  let result = [];
+
+  for (let i = buckets.length; i >= 0; --i) {
+    if (buckets[i]) result.push(...buckets[i]);
+    if (result.length == k) break;
+  }
+
   return result;
 };
+
 // @lc code=end
 
-console.log(topKFrequent([1, 1, 1, 2, 2, 3], 2));
+// Accepted
+// 21/21 cases passed (130 ms)
+// Your runtime beats 51.81 % of javascript submissions
+// Your memory usage beats 43.26 % of javascript submissions (46.1 MB)
+
+let r = topKFrequent([-1, -1], 1);
+console.log(r);
+
+// https://leetcode.com/problems/top-k-frequent-elements/discuss/607122/JavaScript-simple-solution-94-64
