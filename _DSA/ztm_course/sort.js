@@ -28,6 +28,26 @@ function bucketSort(arr) {
   return result;
 }
 
-let r = bucketSort([3, 5, 1, 10, 8, 2, 4]);
+let bucket = bucketSort([3, 5, 1, 10, 8, 2, 4]);
+console.log(bucket);
 
-console.log(r);
+function quickSort(arr) {
+  if (arr.length <= 1) return arr;
+
+  partition(arr, 0, arr.length - 1);
+}
+
+function partition(arr, low, high) {
+  let pivot = arr[high];
+  let i = low - 1;
+
+  for (let j = low; j <= high; j++) {
+    if (arr[j] < pivot) {
+      swap(arr, pivot, index);
+      i += 1;
+    }
+  }
+}
+
+const swap = (arr, left, right) =>
+  ([arr[left], arr[right]] = [arr[right], arr[left]]);

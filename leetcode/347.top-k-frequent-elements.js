@@ -42,6 +42,6 @@ var topKFrequent = function (nums, k) {
 // Your memory usage beats 43.26 % of javascript submissions (46.1 MB)
 
 let r = topKFrequent([-1, -1], 1);
-console.log(r);
+console.log(bucket);
 
 // https://leetcode.com/problems/top-k-frequent-elements/discuss/607122/JavaScript-simple-solution-94-64
