@@ -2,27 +2,19 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Stack;
 
-
-
 public class _Test {
-  public static void main(String[] args)  {
-      Solution solution = new Solution();
+  public static void main(String[] args) {
+    Solution solution = new Solution();
 
-
-      
-      
-
-      System.out.println(isValid);
+    // System.out.println(isValid);
   }
 
-  
 }
-
 
 class Solution {
   public int majorityElement(int[] nums) {
-      Arrays.sort(nums);
+    Arrays.sort(nums);
 
-      return nums[nums.length/2];
+    return nums[nums.length / 2];
   }
 }
