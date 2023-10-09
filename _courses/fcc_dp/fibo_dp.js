@@ -1,19 +1,19 @@
 function fibo(n){
   let memo = new Map()
-  let r = tribo_ds(n, memo)
+  let r = fibo_ds(n, memo)
 
   console.log(`Final memo ${printMemo(memo)}` )
   return r
 }
 
-function tribo_ds(n, memo){
+function fibo_ds(n, memo){
   // console.log(`n(${n}) = memo(${printMemo(memo)})` )
   if(n <= 1) return n
   if(memo.has(n)){
     return memo.get(n)
   }
 
-  let r = tribo_ds(n-1, memo) + tribo_ds(n-2, memo)
+  let r = fibo_ds(n-1, memo) + fibo_ds(n-2, memo)
   memo.set(n, r)
 
   return r
