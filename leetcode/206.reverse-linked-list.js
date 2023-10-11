@@ -56,6 +56,10 @@ class ListNode {
     this.val = val === undefined ? 0 : val;
     this.next = next === undefined ? null : next;
   }
+
+  toString(){
+    return this.val
+  }
 }
 
 
