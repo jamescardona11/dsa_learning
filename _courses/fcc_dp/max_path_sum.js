@@ -1,12 +1,12 @@
 function maxPathSum(grid){
   let memo = {}
-  let r = maxPathSumDP(grid, 0, 0, 0, memo)
+  let r = maxPathSumDP(grid, 0, 0, memo)
 
   console.log(memo)
   return r
 }
 
-function maxPathSumDP(grid, x, y, amount, memo) {
+function maxPathSumDP(grid, x, y, memo) {
   if(x == grid.length || y == grid[0].length) return Number.NEGATIVE_INFINITY
   if(x === grid.length - 1 && y == grid[0].length - 1) return grid[x][y]
 
@@ -17,8 +17,8 @@ function maxPathSumDP(grid, x, y, amount, memo) {
 
 
   memo[key] = grid[x][y] + Math.max(
-    maxPathSumDP(grid, x, y+1, amount, memo), 
-    maxPathSumDP(grid, x+1, y, amount, memo)
+    maxPathSumDP(grid, x, y+1, memo), 
+    maxPathSumDP(grid, x+1, y, memo)
     )
   return memo[key]
   
