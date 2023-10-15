@@ -1,4 +1,4 @@
-function minCostClimbingStairs(n){
+function climbingStairs(n){
   return climbingStairsDP(n, new Map())
 }
 
@@ -13,5 +13,21 @@ function climbingStairsDP(n, memo){
   return memo.get(n)
 }
 
-const r = minCostClimbingStairs(5)
+/// neetcode solution
+// reverse order counting
+
+function climbingStairsCounting(n){
+  let one = 1, two = 1
+  for(let i=0; i<n-1; i++){
+    let temp = one
+    one = one + two
+    two = temp
+  }
+
+  return one
+}
+
+const r = climbingStairs(5)
+const r2 = climbingStairsCounting(5)
 console.log(r)
+console.log(r2)
