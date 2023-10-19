@@ -1,36 +1,23 @@
 function numDecodings(str){
-  return numDecodingsDS(str, 0)
+  return numDecodingsDS(str, str.length, {})
 }
 
-function numDecodingsDS(str, index){
-  if(str.length == 0) return 1
-  
-  let i = index
-  let left = str[i]
-  while(left == '0'){
-    left = str[++i]
-  }
-  
-  let right = str[++i]
-  while(right == '0'){
-    right = str[++i]
+function numDecodingsDS(str, k, memo){
+  if(k == 0) return 1
+
+  let s = str.length - k
+  if(str[s] == '0') return 0
+  if(k in memo){
+    return memo[k]
   }
 
-  if(i < str.length && parseInt(`${right}${str[++i]}`) <= 26 ){
-    right += str[i]
+  let result = numDecodingsDS(str, k-1, memo)
+  if(k >= 2 && parseInt(str.substring(s, s+2)) <= 26){
+    result += numDecodingsDS(str, k-2, memo)
   }
-  
-  
-  // i++
-  // while(i < str.length && str[i] == '0'){
-  //   i++
-  // }
-  // let right = str[i] + str[i+1]
-  
-  console.log(left)
-  console.log(right)
 
-  // const count = numDecodingsDS(str, i+1) + numDecodingsDS(str, 1)
+  memo[k] = result
+  return result
   
 
 }
