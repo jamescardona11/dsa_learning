@@ -20,7 +20,7 @@
 // 208/208 cases passed (56 ms)
 // Your runtime beats 70.78 % of javascript submissions
 // Your memory usage beats 75.03 % of javascript submissions (43.8 MB)
-// var mergeTwoLists = function(list1, list2) {
+// var mergeTwoLists = function(list1, list2) {ƒ
 //   // check input
 //   if (!list1) return list2;
 //   if (!list2) return list1;
