@@ -1,3 +1,4 @@
+package array;
 /*
  * @lc app=leetcode id=169 lang=java
  *
@@ -10,16 +11,15 @@ class Solution {
         int res = 0;
         int count = 0;
 
-
-        for(int i = 0; i < nums.length; i++) {
-            if(count == 0){
+        for (int i = 0; i < nums.length; i++) {
+            if (count == 0) {
                 res = nums[i];
             }
 
             count += nums[i] == res ? 1 : -1;
         }
 
-        return res;   
+        return res;
     }
 }
 // @lc code=end
@@ -28,14 +28,12 @@ class Solution {
 // Your runtime beats 99.94 % of java submissions
 // Your memory usage beats 88.93 % of java submissions (46 MB)
 
-
-
 // class Solution {
-//     public int majorityElement(int[] nums) {
-//         Arrays.sort(nums);
+// public int majorityElement(int[] nums) {
+// Arrays.sort(nums);
 
-//         return nums[nums.length/2];   
-//     }
+// return nums[nums.length/2];
+// }
 // }
 // Accepted
 // 43/43 cases passed (5 ms)
